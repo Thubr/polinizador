@@ -181,6 +181,29 @@ class _OverviewGrid extends StatelessWidget {
                 )
             )
           ),
+          Container(
+              width: boxWidth,
+              child: Card(
+                  color: PolinizadorColors.cardBackground,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 600,
+                            height: 50,
+                            color: PolinizadorColors.gray25,
+                            child: Text("Resumo", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                          ),
+                        ),
+                        SizedBox(height: spacing),
+                        Image.network("https://natanaeloliveira.com/hosted/images/5a/7963b0756d11e89d5061af0ee36563/Screen-Shot-2018-06-21-at-12.56.11-PM.png")
+                      ]
+                  )
+              )
+          ),
         ],
       );
     });
