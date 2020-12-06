@@ -7,18 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animations/animations.dart';
 
 import 'package:polinizador_dashboard_app/DashboardScreen.dart';
+import 'package:polinizador_dashboard_app/theme.dart';
 import 'package:polinizador_dashboard_app/utils/letter_spacing.dart';
-
-const Color gray = Color(0xFFD8D8D8);
-const Color gray60 = Color(0x99D8D8D8);
-const Color gray25 = Color(0x40D8D8D8);
-const Color white60 = Color(0x99FFFFFF);
-const Color primaryBackground = Color(0xFF33333D);
-const Color inputBackground = Color(0xFF26282F);
-const Color cardBackground = Color(0x03FEFEFE);
-const Color buttonColor = Color(0xFF09AF79);
-const Color focusColor = Color(0xCCFFFFFF);
-const Color dividerColor = Color(0xAA282828);
 
 void main() {
   runApp(RallyApp());
@@ -35,7 +25,7 @@ class RallyApp extends StatelessWidget {
   static const String homeRoute = '/rally';
 
   final sharedZAxisTransitionBuilder = const SharedAxisPageTransitionsBuilder(
-    fillColor: primaryBackground,
+    fillColor: PolinizadorColors.primaryBackground,
     transitionType: SharedAxisTransitionType.scaled,
   );
 
@@ -63,17 +53,17 @@ class RallyApp extends StatelessWidget {
     final base = ThemeData.dark();
     return ThemeData(
       appBarTheme: const AppBarTheme(brightness: Brightness.dark, elevation: 0),
-      scaffoldBackgroundColor: primaryBackground,
-      primaryColor: primaryBackground,
-      focusColor: focusColor,
+      scaffoldBackgroundColor: PolinizadorColors.primaryBackground,
+      primaryColor: PolinizadorColors.primaryBackground,
+      focusColor: PolinizadorColors.focusColor,
       textTheme: _buildRallyTextTheme(base.textTheme),
       inputDecorationTheme: const InputDecorationTheme(
         labelStyle: TextStyle(
-          color: gray,
+          color: PolinizadorColors.gray,
           fontWeight: FontWeight.w500,
         ),
         filled: true,
-        fillColor: inputBackground,
+        fillColor: PolinizadorColors.inputBackground,
         focusedBorder: InputBorder.none,
       ),
       visualDensity: VisualDensity.standard,
