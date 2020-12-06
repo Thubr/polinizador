@@ -75,12 +75,28 @@ class _OverviewGrid extends StatelessWidget {
 
   final double spacing;
 
-  List<Widget> _buildCardList() {
-    List<Widget> productList = [
-      ProductCard("AirFryer"),
-      ProductCard("Samsung Laptop")
+  List<Widget> _buildCardSoldList() {
+    List<Widget> soldProductList = [
+      ProductCard("AirFryer", description: Text("200 unidades vendidas!", style: TextStyle(color: Colors.black54),)),
+      ProductCard("Samsung Laptop", description: Text("80 unidades vendidades!", style: TextStyle(color: Colors.black54),))
     ];
-    return productList.map((item) => Container(
+    return soldProductList.map((item) => Container(
+      child: Container(
+          margin: EdgeInsets.all(5.0),
+          child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              child: item
+          )
+      ),
+    )).toList();
+  }
+
+  List<Widget> _buildCardSeenList() {
+    List<Widget> seenProductList = [
+      ProductCard("AirFryer", description: Text("1000 pessoas visualizaram!", style: TextStyle(color: Colors.black54),)),
+      ProductCard("Samsung Laptop", description: Text("650 pessoas visualizaram!", style: TextStyle(color: Colors.black54),))
+    ];
+    return seenProductList.map((item) => Container(
       child: Container(
           margin: EdgeInsets.all(5.0),
           child: ClipRRect(
@@ -128,9 +144,9 @@ class _OverviewGrid extends StatelessWidget {
                   CarouselSlider(
                     options: CarouselOptions(
                       enableInfiniteScroll: true,
-                      height: 200,
+                      height: 250,
                     ),
-                    items: _buildCardList()
+                    items: _buildCardSoldList()
                   ),
                 ]
               )
@@ -157,9 +173,9 @@ class _OverviewGrid extends StatelessWidget {
                       CarouselSlider(
                           options: CarouselOptions(
                             enableInfiniteScroll: true,
-                            height: 200,
+                            height: 250,
                           ),
-                          items: _buildCardList()
+                          items: _buildCardSeenList()
                       ),
                     ]
                 )

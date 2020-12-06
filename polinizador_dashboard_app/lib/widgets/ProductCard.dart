@@ -16,12 +16,21 @@ class ProductCard extends StatelessWidget {
         onTap: () {
           print("Card '$title' pressed");
           },
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Image.network(imageURL ?? "https://via.placeholder.com/150"),
-            Text(title, style: TextStyle(color: Colors.black54),),
-            description ?? SizedBox(width: 0, height: 0),
+            Padding(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(title, style: TextStyle(color: Colors.black54),),
+                  description ?? SizedBox(width: 0, height: 0),
+                ],
+              ),
+              padding: EdgeInsets.only(right: 20),
+            )
           ],
         ),
       )
