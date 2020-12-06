@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:polinizador_client_app/models/product.dart';
+
+import '../models/product.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;

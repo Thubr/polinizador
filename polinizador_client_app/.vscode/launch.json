@@ -8,6 +8,11 @@
             "name": "polinizador_client_app",
             "request": "launch",
             "type": "dart"
-        }
+        },
+        {
+            "name": "polinizador_profile_app",
+            "request": "launch",
+            "flutterMode": "profile",
+        },
     ]
 }

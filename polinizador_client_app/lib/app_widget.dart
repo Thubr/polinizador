@@ -15,6 +15,7 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           title: 'Polinizador',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primaryColor: Colors.deepPurple,
             accentColor: Colors.amber,

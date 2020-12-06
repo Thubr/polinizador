@@ -15,6 +15,7 @@ class Body extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text('Catálogo'),
+          const SizedBox(height: 20),
           Expanded(
             child: Consumer<ProductsCatalog>(
               builder: (context, products, child) {

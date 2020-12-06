@@ -13,7 +13,7 @@ final list = [
   ),
   Product(
     id: '2',
-    name: 'Tẽnis',
+    name: 'Tênis',
     description: 'lorem ipsum',
     price: 299.99,
     imageUrl: 'https://imgcentauro-a.akamaihd.net/500x500/M02ZFU02/tenis-feminino-preto-torani-com-glitter-img.jpg',

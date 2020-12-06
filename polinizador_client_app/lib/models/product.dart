@@ -42,4 +42,9 @@ class Product {
   String toJson() => json.encode(toMap());
 
   factory Product.fromJson(String source) => Product.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Product(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl)';
+  }
 }
