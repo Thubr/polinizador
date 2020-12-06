@@ -1,5 +1,6 @@
-import 'package:polinizador_dashboard_app/pages/dashboard/SImpleView2.dart';
-import 'package:polinizador_dashboard_app/pages/dashboard/SimpleView.dart';
+import 'package:polinizador_dashboard_app/tabs/HighlightsView.dart';
+import 'package:polinizador_dashboard_app/tabs/SImpleView2.dart';
+import 'package:polinizador_dashboard_app/tabs/SimpleView.dart';
 import 'package:flutter/material.dart';
 import 'package:polinizador_dashboard_app/utils/adaptive.dart';
 import 'package:polinizador_dashboard_app/utils/text_scale.dart';
@@ -163,7 +164,7 @@ class _DashboardScreenState extends State<DashboardScreen>
 
   List<Widget> _buildTabViews() {
     return [
-      SimpleView(title: "simple 1"),
+      HighlightsView(),
       SimpleView2(title: "simple 2")
     ];
   }

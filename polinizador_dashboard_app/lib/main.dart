@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animations/animations.dart';
 
-import 'package:polinizador_dashboard_app/pages/dashboard/DashboardScreen.dart';
+import 'package:polinizador_dashboard_app/DashboardScreen.dart';
 import 'package:polinizador_dashboard_app/utils/letter_spacing.dart';
 
 const Color gray = Color(0xFFD8D8D8);
