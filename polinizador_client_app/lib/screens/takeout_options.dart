@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:polinizador_client_app/models/product.dart';
-import 'package:polinizador_client_app/screens/in_store_pickup.dart';
+
+import '../models/product.dart';
+import 'in_store_pickup.dart';
 
 class TakeoutOptions extends StatelessWidget {
   final Product product;
@@ -15,14 +16,16 @@ class TakeoutOptions extends StatelessWidget {
       appBar: AppBar(
         title: Text('Escolha a forma de entrega'),
       ),
-      body: Center(
-        child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(width: 10),
             Expanded(
               child: Card(
-                elevation: 10,
+                elevation: 6,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                margin: const EdgeInsets.all(20),
                 child: GestureDetector(
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => InStorePickup(product))),
                   child: SizedBox(
@@ -38,10 +41,12 @@ class TakeoutOptions extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 100),
             Expanded(
               child: Card(
-                elevation: 10,
+                elevation: 6,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                margin: const EdgeInsets.all(20),
                 child: SizedBox(
                   height: size.height / 4,
                   child: Center(
@@ -54,7 +59,6 @@ class TakeoutOptions extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 10),
           ],
         ),
       ),

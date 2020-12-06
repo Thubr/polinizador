@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:polinizador_client_app/res/app_colors.dart';
 import 'package:provider/provider.dart';
 
 import 'models/product_catalog.dart';
@@ -17,9 +19,9 @@ class AppWidget extends StatelessWidget {
           title: 'Polinizador',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Colors.deepPurple,
-            accentColor: Colors.amber,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
+            primaryColor: AppColors.primary,
+            accentColor: AppColors.accent,
+            textTheme: GoogleFonts.poppinsTextTheme(),
           ),
           home: const HomeScreen(),
         );

@@ -37,15 +37,6 @@ class _InStorePickupState extends State<InStorePickup> {
     return _currentLocation = position.toLatLng();
   }
 
-  Set<Marker> getNearbyStores() {
-    return mapToMarker(stores)
-        .where((marker) =>
-            GeolocationService.calculateDistanceTo(
-                _currentLocation.latitude, _currentLocation.longitude, marker.position.latitude, marker.position.longitude) <
-            1000)
-        .toSet();
-  }
-
   Set<Marker> mapToMarker(List<Store> stores) {
     return stores
         .map((store) => Marker(
@@ -70,33 +61,30 @@ class _InStorePickupState extends State<InStorePickup> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 300,
-            child: FutureBuilder(
-              future: getCurrentLocation(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) return _buildMap();
-                return Container();
-              },
-            ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            allStores ? 'Todas as lojas' : 'Lojas que possuem seu produto em estoque',
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Expanded(
-            child: FutureBuilder(
-              future: getAllStores(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) return _buildStoresList();
-                return Container();
-              },
-            ),
-          ),
-        ],
+      body: FutureBuilder(
+        future: Future.wait([getCurrentLocation(), getAllStores()]),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done)
+            return Column(
+              children: [
+                SizedBox(
+                  height: 300,
+                  child: FutureBuilder(
+                    builder: (context, snapshot) {
+                      return _buildMap();
+                    },
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  allStores ? 'Todas as lojas' : 'Lojas que possuem seu produto em estoque',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Expanded(child: _buildStoresList()),
+              ],
+            );
+          return const Center(child: CircularProgressIndicator());
+        },
       ),
     );
   }
@@ -107,7 +95,7 @@ class _InStorePickupState extends State<InStorePickup> {
       onMapCreated: (controller) => _controller = controller,
       mapType: MapType.normal,
       myLocationEnabled: true,
-      markers: allStores ? mapToMarker(stores) : getNearbyStores(),
+      markers: mapToMarker(stores),
     );
   }
 
