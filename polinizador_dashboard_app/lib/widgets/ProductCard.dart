@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:polinizador_dashboard_app/theme.dart';
 
 class ProductCard extends StatelessWidget {
 
@@ -12,6 +13,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: PolinizadorColors.cardBackground,
       child: InkWell(
         onTap: () {
           print("Card '$title' pressed");
@@ -25,7 +27,7 @@ class ProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(title, style: TextStyle(color: Colors.black54),),
+                  Text(title, style: TextStyle(color: PolinizadorColors.white60),),
                   description ?? SizedBox(width: 0, height: 0),
                 ],
               ),
