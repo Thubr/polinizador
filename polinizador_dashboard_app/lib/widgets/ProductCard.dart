@@ -17,9 +17,9 @@ class ProductCard extends StatelessWidget {
           print("Card '$title' pressed");
           },
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Image.network(imageURL ?? "https://via.placeholder.com/150"),
+            Image.network(imageURL ?? "https://via.placeholder.com/150", width: 150, height: 150, fit: BoxFit.fitHeight,),
             Padding(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

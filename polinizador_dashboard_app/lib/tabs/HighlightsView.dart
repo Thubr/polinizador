@@ -77,8 +77,8 @@ class _OverviewGrid extends StatelessWidget {
 
   List<Widget> _buildCardSoldList() {
     List<Widget> soldProductList = [
-      ProductCard("AirFryer", description: Text("200 unidades vendidas!", style: TextStyle(color: Colors.black54),)),
-      ProductCard("Samsung Laptop", description: Text("80 unidades vendidades!", style: TextStyle(color: Colors.black54),))
+      ProductCard("AirFryer", imageURL: "https://novomundo.vteximg.com.br/arquivos/ids/2210968-500-500/fritadeira-sem-oleo-air-fryer-maxis-1270w-32l-pretoprata-af-33-220v-61410-0.jpg?v=637215249872830000", description: Text("200 unidades vendidas!", style: TextStyle(color: Colors.black54),)),
+      ProductCard("Samsung Laptop", imageURL: "https://a-static.mlcdn.com.br/618x463/notebook-samsung-book-x30-intel-core-i5-8gb-1tb-156-windows-10/magazineluiza/225395400/1686bb5ef5ac278b8948e4573c88bfc0.jpg", description: Text("80 unidades vendidades!", style: TextStyle(color: Colors.black54),))
     ];
     return soldProductList.map((item) => Container(
       child: Container(
@@ -93,8 +93,8 @@ class _OverviewGrid extends StatelessWidget {
 
   List<Widget> _buildCardSeenList() {
     List<Widget> seenProductList = [
-      ProductCard("AirFryer", description: Text("1000 pessoas visualizaram!", style: TextStyle(color: Colors.black54),)),
-      ProductCard("Samsung Laptop", description: Text("650 pessoas visualizaram!", style: TextStyle(color: Colors.black54),))
+      ProductCard("AirFryer", imageURL: "https://novomundo.vteximg.com.br/arquivos/ids/2210968-500-500/fritadeira-sem-oleo-air-fryer-maxis-1270w-32l-pretoprata-af-33-220v-61410-0.jpg?v=637215249872830000", description: Text("1000 pessoas visualizaram!", style: TextStyle(color: Colors.black54),)),
+      ProductCard("Samsung Laptop", imageURL: "https://a-static.mlcdn.com.br/618x463/notebook-samsung-book-x30-intel-core-i5-8gb-1tb-156-windows-10/magazineluiza/225395400/1686bb5ef5ac278b8948e4573c88bfc0.jpg", description: Text("650 pessoas visualizaram!", style: TextStyle(color: Colors.black54),))
     ];
     return seenProductList.map((item) => Container(
       child: Container(
