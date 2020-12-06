@@ -6,7 +6,7 @@ import 'product.dart';
 final list = [
   Product(
     id: '1',
-    name: 'Airfryer',
+    name: 'Fritadeira elétrica',
     description: 'Lorem ipsum',
     price: 1100.99,
     imageUrl: 'https://cdn.awsli.com.br/600x700/525/525768/produto/38110721/e31fbbfcea.jpg',

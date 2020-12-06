@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -19,7 +21,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
     controller.scannedDataStream.listen((event) {
       try {
         if (event != null) {
-          final product = Product.fromJson(event);
+          final product = Product.fromJson(json.decode(event));
           controller.pauseCamera();
           Navigator.of(context).pop(product);
         }

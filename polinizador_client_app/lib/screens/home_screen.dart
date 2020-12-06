@@ -17,9 +17,9 @@ class HomeScreen extends StatelessWidget {
     final products = Provider.of<ProductsCatalog>(context, listen: false);
 
     void _scanQRCode() {
-      Navigator.of(context)
-          .push<Product>(MaterialPageRoute(builder: (context) => const ScannerScreen()))
-          .then((product) => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen(product))));
+      Navigator.of(context).push<Product>(MaterialPageRoute(builder: (context) => const ScannerScreen())).then((product) {
+        if (product != null) Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen(product)));
+      });
     }
 
     return Scaffold(
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.location_on),
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMapsScreen()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) => GoogleMapsScreen()));
         },
       ),
     );

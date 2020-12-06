@@ -1,7 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/widgets.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'product.g.dart';
+
+@JsonSerializable()
 class Product {
   final String id;
   final String name;
@@ -17,34 +19,6 @@ class Product {
     @required this.imageUrl,
   });
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'description': description,
-      'price': price,
-      'imageUrl': imageUrl,
-    };
-  }
-
-  factory Product.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
-    return Product(
-      id: map['id'],
-      name: map['name'],
-      description: map['description'],
-      price: map['price'],
-      imageUrl: map['imageUrl'],
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Product.fromJson(String source) => Product.fromMap(json.decode(source));
-
-  @override
-  String toString() {
-    return 'Product(id: $id, name: $name, description: $description, price: $price, imageUrl: $imageUrl)';
-  }
+  factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
+  Map<String, dynamic> toJson() => _$ProductToJson(this);
 }

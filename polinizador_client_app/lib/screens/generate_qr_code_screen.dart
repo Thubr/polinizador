@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:uuid/uuid.dart';
@@ -30,7 +32,7 @@ class _GenerateQRCodeScreenState extends State<GenerateQRCodeScreen> {
       imageUrl: _imageUrl,
     );
     _qrCode = QrImage(
-      data: product.toJson(),
+      data: json.encode(product.toJson()),
       size: 200,
     );
     setState(() {});
