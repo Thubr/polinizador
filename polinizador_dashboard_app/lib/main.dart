@@ -21,8 +21,7 @@ void main() {
 class RallyApp extends StatelessWidget {
   const RallyApp();
 
-  static const String loginRoute = '/rally/login';
-  static const String homeRoute = '/rally';
+  static const String homeRoute = '/home';
 
   final sharedZAxisTransitionBuilder = const SharedAxisPageTransitionsBuilder(
     fillColor: PolinizadorColors.primaryBackground,
