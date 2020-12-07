@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956632487677",
+    "project_id": "polinizador-cceb4",
+    "storage_bucket": "polinizador-cceb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956632487677:android:2d2566789c1c2303c69094",
+        "android_client_info": {
+          "package_name": "com.docputs.polinizador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956632487677-2i0kdh3464kfqpfg0fpr4i5mb2hvhe77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGI--5BSt3TlEamSQGMWWUVkietqcgdOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956632487677-2i0kdh3464kfqpfg0fpr4i5mb2hvhe77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
