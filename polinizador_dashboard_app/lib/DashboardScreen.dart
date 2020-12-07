@@ -1,7 +1,5 @@
 import 'package:polinizador_dashboard_app/tabs/ClientsView.dart';
 import 'package:polinizador_dashboard_app/tabs/HighlightsView.dart';
-import 'package:polinizador_dashboard_app/tabs/SImpleView2.dart';
-import 'package:polinizador_dashboard_app/tabs/SimpleView.dart';
 import 'package:flutter/material.dart';
 import 'package:polinizador_dashboard_app/theme.dart';
 import 'package:polinizador_dashboard_app/utils/adaptive.dart';
@@ -145,7 +143,7 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
       ),
       _RallyTab(
         theme: theme,
-        iconData: Icons.attach_money,
+        iconData: Icons.people,
         title: "Atendimento",
         tabIndex: 1,
         tabController: _tabController,
