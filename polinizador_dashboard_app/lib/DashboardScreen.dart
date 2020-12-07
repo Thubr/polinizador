@@ -16,8 +16,7 @@ class DashboardScreen extends StatefulWidget {
   _DashboardScreenState createState() => _DashboardScreenState();
 }
 
-class _DashboardScreenState extends State<DashboardScreen>
-    with SingleTickerProviderStateMixin {
+class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
@@ -54,20 +53,15 @@ class _DashboardScreenState extends State<DashboardScreen>
               children: [
                 const SizedBox(height: 24),
                 ExcludeSemantics(
-                  child: SizedBox(
-                    height: 80,
-                    child: Image(image: AssetImage('assets/bee_icon.png')),
-                  ),
+                  child: SizedBox(height: 80, child: Image(image: AssetImage('assets/bee_icon.png'))),
                 ),
                 const SizedBox(height: 24),
                 // Rotate the tab bar, so the animation is vertical for desktops.
                 RotatedBox(
                   quarterTurns: verticalRotation,
                   child: _RallyTabBar(
-                    tabs: _buildTabs(
-                        context: context, theme: theme, isVertical: true)
-                        .map(
-                          (widget) {
+                    tabs: _buildTabs(context: context, theme: theme, isVertical: true).map(
+                      (widget) {
                         // Revert the rotation on the tabs.
                         return RotatedBox(
                           quarterTurns: revertVerticalRotation,
@@ -88,12 +82,9 @@ class _DashboardScreenState extends State<DashboardScreen>
               child: TabBarView(
                 controller: _tabController,
                 children: _buildTabViews().map(
-                      (widget) {
+                  (widget) {
                     // Revert the rotation on the tab views.
-                    return RotatedBox(
-                      quarterTurns: revertVerticalRotation,
-                      child: widget,
-                    );
+                    return RotatedBox(quarterTurns: revertVerticalRotation, child: widget);
                   },
                 ).toList(),
               ),
@@ -118,30 +109,29 @@ class _DashboardScreenState extends State<DashboardScreen>
       );
     }
     return Scaffold(
-        body: SafeArea(
-          // For desktop layout we do not want to have SafeArea at the top and
-          // bottom to display 100% height content on the accounts view.
-          top: !isDesktop,
-          bottom: !isDesktop,
-          child: Theme(
-            // This theme effectively removes the default visual touch
-            // feedback for tapping a tab, which is replaced with a custom
-            // animation.
-            data: theme.copyWith(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-            ),
-            child: FocusTraversalGroup(
-              policy: OrderedTraversalPolicy(),
-              child: tabBarView,
-            ),
+      body: SafeArea(
+        // For desktop layout we do not want to have SafeArea at the top and
+        // bottom to display 100% height content on the accounts view.
+        top: !isDesktop,
+        bottom: !isDesktop,
+        child: Theme(
+          // This theme effectively removes the default visual touch
+          // feedback for tapping a tab, which is replaced with a custom
+          // animation.
+          data: theme.copyWith(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+          ),
+          child: FocusTraversalGroup(
+            policy: OrderedTraversalPolicy(),
+            child: tabBarView,
           ),
         ),
-      );
+      ),
+    );
   }
 
-  List<Widget> _buildTabs(
-      {BuildContext context, ThemeData theme, bool isVertical = false}) {
+  List<Widget> _buildTabs({BuildContext context, ThemeData theme, bool isVertical = false}) {
     return [
       _RallyTab(
         theme: theme,
@@ -163,16 +153,12 @@ class _DashboardScreenState extends State<DashboardScreen>
   }
 
   List<Widget> _buildTabViews() {
-    return [
-      HighlightsView(),
-      SimpleView2(title: "simple 2")
-    ];
+    return [HighlightsView(), SimpleView2(title: "simple 2")];
   }
 }
 
 class _RallyTabBar extends StatelessWidget {
-  const _RallyTabBar({Key key, this.tabs, this.tabController})
-      : super(key: key);
+  const _RallyTabBar({Key key, this.tabs, this.tabController}) : super(key: key);
 
   final List<Widget> tabs;
   final TabController tabController;
@@ -217,8 +203,7 @@ class _RallyTab extends StatefulWidget {
   _RallyTabState createState() => _RallyTabState();
 }
 
-class _RallyTabState extends State<_RallyTab>
-    with SingleTickerProviderStateMixin {
+class _RallyTabState extends State<_RallyTab> with SingleTickerProviderStateMixin {
   Animation<double> _titleSizeAnimation;
   Animation<double> _titleFadeAnimation;
   Animation<double> _iconFadeAnimation;

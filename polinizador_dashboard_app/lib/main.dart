@@ -50,13 +50,12 @@ class RallyApp extends StatelessWidget {
   }
 
   ThemeData _buildRallyTheme() {
-    final base = ThemeData.dark();
     return ThemeData(
       appBarTheme: const AppBarTheme(brightness: Brightness.dark, elevation: 0),
       scaffoldBackgroundColor: PolinizadorColors.primaryBackground,
       primaryColor: PolinizadorColors.primaryBackground,
       focusColor: PolinizadorColors.focusColor,
-      textTheme: _buildRallyTextTheme(base.textTheme),
+      textTheme: GoogleFonts.poppinsTextTheme(),
       inputDecorationTheme: const InputDecorationTheme(
         labelStyle: TextStyle(
           color: PolinizadorColors.gray,
