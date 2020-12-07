@@ -1,7 +1,9 @@
+import 'package:polinizador_dashboard_app/tabs/ClientsView.dart';
 import 'package:polinizador_dashboard_app/tabs/HighlightsView.dart';
 import 'package:polinizador_dashboard_app/tabs/SImpleView2.dart';
 import 'package:polinizador_dashboard_app/tabs/SimpleView.dart';
 import 'package:flutter/material.dart';
+import 'package:polinizador_dashboard_app/theme.dart';
 import 'package:polinizador_dashboard_app/utils/adaptive.dart';
 import 'package:polinizador_dashboard_app/utils/text_scale.dart';
 
@@ -144,7 +146,7 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
       _RallyTab(
         theme: theme,
         iconData: Icons.attach_money,
-        title: "Tab 2",
+        title: "Atendimento",
         tabIndex: 1,
         tabController: _tabController,
         isVertical: isVertical,
@@ -153,7 +155,10 @@ class _DashboardScreenState extends State<DashboardScreen> with SingleTickerProv
   }
 
   List<Widget> _buildTabViews() {
-    return [HighlightsView(), SimpleView2(title: "simple 2")];
+    return [
+      HighlightsView(),
+      ClientsView(),
+    ];
   }
 }
 
@@ -190,7 +195,7 @@ class _RallyTab extends StatefulWidget {
     int tabIndex,
     TabController tabController,
     this.isVertical,
-  })  : titleText = Text(title, style: theme.textTheme.button),
+  })  : titleText = Text(title, style: TextStyle(color: Colors.black87)),
         isExpanded = tabController.index == tabIndex,
         icon = Icon(iconData, semanticLabel: title);
 
